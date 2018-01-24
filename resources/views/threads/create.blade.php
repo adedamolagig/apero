@@ -19,7 +19,7 @@
 
                                 @foreach($channels as $channel)
                                     <option value=" {{ $channel->id }} " {{ old('channel_id') == $channel->id ? 'selected' : '' }} >
-                                        {{ $channel->name }}                                        
+                                        First Channel                                       
                                     </option>
 
                                 @endforeach
