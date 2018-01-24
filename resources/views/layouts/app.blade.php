@@ -64,20 +64,12 @@
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Channels 
                             <span class="caret"></span></a>
 
-                         <!--  <ul class="dropdown-menu">
+                          <ul class="dropdown-menu">
                             @foreach($channels as $channels)
                                 <li><a href="/threads/{{ $channels->slug }}"> {{ $channels->name }}</a> </li>
                             @endforeach
-                          </ul> -->
-                        
-                           <ul class="dropdown-menu">
-                           
-                                <li><a href="/threads/{{ $channels->slug }}"> First Channel</a> </li>
-                            
                           </ul>
-
                         </li>
-
                     </ul>
 
                     <!-- Right Side Of Navbar -->
