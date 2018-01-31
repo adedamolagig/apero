@@ -66,7 +66,7 @@
 
                           <ul class="dropdown-menu">
                             @foreach($channels as $channels)
-                                <li><a href="/threads/{{ $channels->slug }}"> {{ $channels->name }}</a> </li>
+                                <li><a href="/threads/{{ $channels->slug }} "> {{ $channels->name }}</a> </li>
                             @endforeach
                           </ul>
                         </li>
@@ -88,6 +88,8 @@
                                     <li>
 
                                         <a href="/threads/create">Create Threads</a>
+
+                                        <a href="/channels/create">Create Channels</a>
 
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
