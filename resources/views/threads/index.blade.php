@@ -18,7 +18,9 @@
                                             {{ $thread->title }}
                                         </a>
 
-                                        
+                                         <div class="panel-body">
+                                            {{ $thread->body }} 
+                                        </div>
                                     </h4>
                                     
 
