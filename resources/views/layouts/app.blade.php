@@ -65,7 +65,7 @@
                             <span class="caret"></span></a>
 
                           <ul class="dropdown-menu">
-                            @foreach($channels as $channels)
+                            @foreach(\App\Channels::latest()->get() as $channels)
                                 <li><a href="/threads/{{ $channels->slug }} "> {{ $channels->name }}</a> </li>
                             @endforeach
                           </ul>

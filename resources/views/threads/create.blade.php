@@ -17,7 +17,7 @@
                             <select name="channels_id" id="channels_id" class="form-control" required>
                                 <option value="">Choose one...</option>
 
-                                @foreach($channels as $channel)
+                                @foreach(\App\Channels::latest()->get() as $channel)
                                     <option value=" {{ $channel->id }} " {{ old('channel_id') == $channel->id ? 'selected' : '' }} >
                                         {{ $channel->name }}                                        
                                     </option>
