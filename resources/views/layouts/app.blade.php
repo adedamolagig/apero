@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Forum') }}</title>
+    <title>{{ config('app.name', 'Forum') }}...thoughts, circles and joins</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -36,7 +36,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'FORUM') }}
+                        {{ config('app.name', 'FORUM') }}<h6>...thoughts, circles, joins</h6>
                     </a>
                 </div>
 
