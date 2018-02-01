@@ -14,6 +14,8 @@
         <style>
             html, body {
                 background-color: #fff;
+                background: url(../images/home_bg.jpeg);
+                background-size: 100%;
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
@@ -47,12 +49,15 @@
 
             .title {
                 font-size: 84px;
+                font-weight: bold;
+                font-family: Chalkduster, fantasy;
+                color: white;
             }
 
             .links > a {
-                color: #636b6f;
+                color: white;
                 padding: 0 25px;
-                font-size: 12px;
+                font-size: 20px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
@@ -71,6 +76,7 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
+                        <a href="/threads">All Threads</a>
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
                     @endauth
@@ -82,13 +88,7 @@
                     Moving Piles
                 </div>
 
-               <!--  <div class="links">
-                    <a href="{{ route('register') }}">Documentation</a>
-                    <a href="https://laracasts.com">Check this!</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div> -->
+               
             </div>
         </div>
     </body>
