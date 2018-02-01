@@ -79,16 +79,16 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Moving Piles
                 </div>
 
-                <div class="links">
+               <!--  <div class="links">
                     <a href="{{ route('register') }}">Documentation</a>
                     <a href="https://laracasts.com">Check this!</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                </div> -->
             </div>
         </div>
     </body>
