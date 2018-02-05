@@ -77,7 +77,7 @@ class ThreadsController extends Controller
      * @param $channeId
      * @return \Illuminate\Http\Response
      */
-    public function show($channeId, Thread $thread)
+    public function show($channels, Thread $thread)
     {
         //$threads = Thread::latest()->get();
 
@@ -118,9 +118,16 @@ class ThreadsController extends Controller
      * @param  \App\Thread  $thread
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Thread $thread)
+    public function destroy($channels, Thread $thread)
     {
-        //
+        
+        $thread->delete();
+
+        if (request()->wantsJson()){
+            return response([], 204);
+        }
+
+        return redirect('/threads');
     }
 
     public function getThreads(Channels $channels, ThreadFilters $filters)
