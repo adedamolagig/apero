@@ -12,6 +12,7 @@
                             {{ $thread->title }}
                         </span>
 
+                        @can('update', $thread)
                         <form action=" {{ $thread->path() }} " method="POST">
                             {{ csrf_field() }}
 
@@ -19,7 +20,7 @@
 
                             <button type="submit" class="btn btn-danger ">Delete Thread </button>
                         </form>
-
+                        @endcan
 
                     </div>
                    
