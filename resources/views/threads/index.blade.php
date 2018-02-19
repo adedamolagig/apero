@@ -26,7 +26,7 @@
 
                     <div class="panel-body">
                        <div class="panel-body">
-                            {{ $thread->body }} 
+                            {!! nl2br($thread->body) !!} 
                         </div>
          
                     </div>

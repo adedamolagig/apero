@@ -37,7 +37,9 @@
 
                         <div class="form-group">
                             <label for="body">Body:</label>
-                            <textarea name="body" id="body" class="form-control" rows="15" required>{{ old('body') }}</textarea>
+                            <textarea name="body" id="body" class="form-control" rows="15"  wrap="physical"  required>{{ old('body') }}</textarea>
+
+
                         </div>
 
 
