@@ -42,7 +42,7 @@
 
 
                         <div class="form-group">
-                            <button class="btn btn-primary">POST</button>
+                            <button class="btn btn-primary">Create Channel</button>
                         </div>
                         
 
