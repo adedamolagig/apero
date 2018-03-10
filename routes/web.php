@@ -12,6 +12,8 @@
 */
 
 Route::get('/', function () {
+
+	$ip = \Request::ip();
     return view('welcome');
 });
 
