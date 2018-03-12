@@ -76,11 +76,12 @@
         </style>
     </head>
     <body>
-        <div class="top-left links">
-            <a href=" {{ route('Allthreads') }} ">All Threads</a>    
-        </div>
+        
         
         <div class="flex-center position-ref full-height">
+            <div class="top-left links">
+                <a href="/threads">All Threads </a>    
+            </div>
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -95,7 +96,7 @@
                 <div class="title m-b-md">
                     Moving Piles
                
-                    <div>
+                    <div class="title links">
                         <a href="{{ route('login') }}">Login</a>
                     </div>
                 </div>
