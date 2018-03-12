@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
+         <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-85350869-3"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'UA-85350869-3');
+            </script>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -74,6 +83,7 @@
                 margin-bottom: 30px;
             }
         </style>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
     </head>
     <body>
         
@@ -95,10 +105,15 @@
             <div class="content">
                 <div class="title m-b-md">
                     Moving Piles
-               
+                    <!--this part needs a few correction for auth-->
                     <div class="title links">
                         <a href="{{ route('login') }}">Login</a>
                     </div>
+                </div>
+
+                <div class="w3-container w3-center w3-animate-left">
+                  <h1>Animation is Fun!</h1>
+                  <p>The w3-animate-left class slides in an element from left.</p>
                 </div>
             </div>
         </div>
