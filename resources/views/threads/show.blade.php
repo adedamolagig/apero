@@ -41,6 +41,8 @@
 
             {{ $replies->links() }}
 
+           
+
             @if(auth()->check())
                 <form method="POST" action="{{ $thread->path(). '/replies'}}">
                 {{csrf_field()}}

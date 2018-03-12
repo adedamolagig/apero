@@ -21,7 +21,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/threads', 'ThreadsController@index');
+Route::get('/threads', 'ThreadsController@index')->name('Allthreads');
 Route::get('/threads/create', 'ThreadsController@create'); 
 Route::get('/threads/{channels}/{thread}', 'ThreadsController@show');
 Route::delete('threads/{channels}/{thread}', 'ThreadsController@destroy'); 

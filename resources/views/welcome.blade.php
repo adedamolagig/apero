@@ -43,6 +43,12 @@
                 top: 18px;
             }
 
+            .top-left {
+                position: absolute;
+                left: 10px;
+                top: 18px;
+            }
+
             .content {
                 text-align: center;
             }
@@ -70,14 +76,16 @@
         </style>
     </head>
     <body>
+        <div class="top-left links">
+            <a href=" {{ route('Allthreads') }} ">All Threads</a>    
+        </div>
+        
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="/threads">All Threads</a>
-                        <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
                     @endauth
                 </div>
@@ -86,9 +94,11 @@
             <div class="content">
                 <div class="title m-b-md">
                     Moving Piles
-                </div>
-
                
+                    <div>
+                        <a href="{{ route('login') }}">Login</a>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
