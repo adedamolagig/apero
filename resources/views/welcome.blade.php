@@ -111,10 +111,10 @@
                     </div>
                 </div>
 
-                <div class="w3-container w3-center w3-animate-left">
+                <!-- <div class="w3-container w3-center w3-animate-left">
                   <h1>Animation is Fun!</h1>
                   <p>The w3-animate-left class slides in an element from left.</p>
-                </div>
+                </div> -->
             </div>
         </div>
     </body>
