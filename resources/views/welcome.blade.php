@@ -109,7 +109,7 @@
                     Moving Piles
                     <!--this part needs a few correction for auth-->
                     <div class="title links">
-                        <a href="{{ route('login') }}">Login <i class="fa fa-trophy fa-4x"></i></a>
+                        <a href="{{ route('login') }}">Login <i class="fa fa-sign-in fa-4x"></i></a>
                     </div>
                 </div>
 
