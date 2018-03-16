@@ -14,7 +14,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Something</title>
+        <title>MovingPiles</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -84,8 +84,15 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .animated {
+                color: white;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
         </style>
-        <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">  -->
+        
     </head>
     <body>
         
@@ -111,11 +118,15 @@
                     <div class="title links">
                         <a href="{{ route('login') }}">Login <i class="fa fa-sign-in fa-4x"></i></a>
                     </div>
+
+                    <!-- <div>
+                        <img src="/images/streetart2.jpg" class="w3-round" alt="Norway">
+                    </div> -->
                 </div>
 
-                <!-- <div class="w3-container w3-center w3-animate-left">
-                  <h1>Animation is Fun!</h1>
-                  <p>The w3-animate-left class slides in an element from left.</p>
+               <!--  <div class="w3-container w3-center w3-animate-left animated">
+                  
+                  <h4>Movingpiles is a platform for the expression of all issues of everyday life; whether real, fictional, personal or imaginative. it is a no holds barred arena to learn, discover, build, connect and evolve and feel the universal diversity and oneness. </h4>
                 </div> -->
             </div>
         </div>
