@@ -19,8 +19,6 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
         <!-- Styles -->
         <style>
             html, body {
@@ -116,7 +114,10 @@
                     Moving Piles
                     <!--this part needs a few correction for auth-->
                     <div class="title links">
-                        <a href="{{ route('login') }}">Login <i class="fa fa-sign-in fa-4x"></i></a>
+
+                        <a href="{{ route('login') }}">Login <i class="fa fa-car fa-4x"></i></a>
+                        
+
                     </div>
 
                     <!-- <div>
@@ -124,10 +125,10 @@
                     </div> -->
                 </div>
 
-               <!--  <div class="w3-container w3-center w3-animate-left animated">
+                <div class="w3-container w3-center w3-animate-left animated">
                   
                   <h4>Movingpiles is a platform for the expression of all issues of everyday life; whether real, fictional, personal or imaginative. it is a no holds barred arena to learn, discover, build, connect and evolve and feel the universal diversity and oneness. </h4>
-                </div> -->
+                </div>
             </div>
         </div>
     </body>
