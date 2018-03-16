@@ -19,6 +19,8 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
         <!-- Styles -->
         <style>
             html, body {
@@ -107,7 +109,7 @@
                     Moving Piles
                     <!--this part needs a few correction for auth-->
                     <div class="title links">
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}">Login <i class="fa fa-trophy fa-4x"></i></a>
                     </div>
                 </div>
 
