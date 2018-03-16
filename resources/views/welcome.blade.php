@@ -84,10 +84,12 @@
             }
 
             .animated {
-                color: white;
-                align-items: center;
-                display: flex;
-                justify-content: center;
+                color: white;   
+                width: 100%;
+                height: 100px;
+                text-align: justify;
+                position: relative;
+
             }
         </style>
         
@@ -125,9 +127,9 @@
                     </div> -->
                 </div>
 
-                <div class="w3-container w3-center w3-animate-left animated">
+                <div class="content animated">
                   
-                  <h4>Movingpiles is a platform for the expression of all issues of everyday life; whether real, fictional, personal or imaginative. it is a no holds barred arena to learn, discover, build, connect and evolve and feel the universal diversity and oneness. </h4>
+                  <h3>Movingpiles is a platform for the expression of all issues of everyday life; whether real, fictional, personal or imaginative. it is a no holds barred arena to learn, discover, build, connect and evolve and feel the universal diversity and oneness. </h3>
                 </div>
             </div>
         </div>
