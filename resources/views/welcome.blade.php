@@ -91,6 +91,16 @@
                 position: relative;
 
             }
+
+            .text-block {
+                position: absolute;
+                bottom: 5%;
+                right: 5px;
+                background-color: black;
+                color: white;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
         </style>
         
     </head>
@@ -127,7 +137,7 @@
                     </div> -->
                 </div>
 
-                <div class="content animated">
+                <div class="text-block">
                   
                   <h3>Movingpiles is a platform for the expression of all issues of everyday life; whether real, fictional, personal or imaginative. it is a no holds barred arena to learn, discover, build, connect and evolve and feel the universal diversity and oneness. </h3>
                 </div>
