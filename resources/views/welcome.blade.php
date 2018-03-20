@@ -79,6 +79,10 @@
                 text-transform: uppercase;
             }
 
+            /*a:hover {
+                text-decoration: underline overline dotted red;
+            }*/
+
             .m-b-md {
                 margin-bottom: 30px;
             }
@@ -92,7 +96,7 @@
 
             }
 
-            .text-block {
+           .text-block {
                 position: absolute;
                 bottom: 5%;
                 right: 5px;
@@ -100,6 +104,32 @@
                 color: white;
                 padding-left: 20px;
                 padding-right: 20px;
+                background-color: black;
+                -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+                -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+                animation-name: example;
+                animation-duration: 4s;
+                text-color: white;
+            }
+
+            /* Safari 4.0 - 8.0 */
+            @-webkit-keyframes example {
+                0%   {background-color: red;}
+                25%  {background-color: yellow;}
+                50%  {background-color: blue;}
+                100% {background-color: green;}
+            }
+
+            /* Standard syntax */
+            @keyframes example {
+                0%   {background-color: red;}
+                25%  {background-color: yellow;}
+                50%  {background-color: blue;}
+                100% {background-color: green;}
+            }
+
+            .shadow{
+                text-shadow: 10px 10px 20px black, 0 0 25px blue, 0 0 5px darkblue;
             }
         </style>
         
@@ -108,7 +138,7 @@
         
         
         <div class="flex-center position-ref full-height">
-            <div class="top-left links">
+            <div class="top-left links shadow">
                 <a href="/threads">All Threads </a>    
             </div>
             @if (Route::has('login'))
@@ -116,7 +146,7 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('register') }}">Register</a>
+                        <a class="shadow" href="{{ route('register') }}">Register</a>
                     @endauth
                 </div>
             @endif
