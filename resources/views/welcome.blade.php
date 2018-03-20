@@ -79,9 +79,6 @@
                 text-transform: uppercase;
             }
 
-            /*a:hover {
-                text-decoration: underline overline dotted red;
-            }*/
 
             .m-b-md {
                 margin-bottom: 30px;
@@ -154,7 +151,7 @@
             <div class="content">
                 <div class="title m-b-md">
                     Moving Piles
-                    <!--this part needs a few correction for auth-->
+                    
                     <div class="title links">
 
                         <a href="{{ route('login') }}">Login <i class="fa fa-car fa-4x"></i></a>
@@ -162,9 +159,7 @@
 
                     </div>
 
-                    <!-- <div>
-                        <img src="/images/streetart2.jpg" class="w3-round" alt="Norway">
-                    </div> -->
+                   
                 </div>
 
                 <div class="text-block">
