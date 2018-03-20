@@ -102,14 +102,14 @@
                 padding-left: 20px;
                 padding-right: 20px;
                 background-color: black;
-                -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
-                -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+                -webkit-animation-name: example; 
+                -webkit-animation-duration: 4s;
                 animation-name: example;
                 animation-duration: 4s;
                 text-color: white;
             }
 
-            /* Safari 4.0 - 8.0 */
+            
             @-webkit-keyframes example {
                 0%   {background-color: red;}
                 25%  {background-color: yellow;}
@@ -117,7 +117,7 @@
                 100% {background-color: green;}
             }
 
-            /* Standard syntax */
+           
             @keyframes example {
                 0%   {background-color: red;}
                 25%  {background-color: yellow;}
