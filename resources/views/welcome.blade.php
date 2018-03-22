@@ -84,50 +84,7 @@
                 margin-bottom: 30px;
             }
 
-            .animated {
-                color: white;   
-                width: 100%;
-                height: 100px;
-                text-align: justify;
-                position: relative;
-
-            }
-
-           .text-block {
-                position: absolute;
-                bottom: 5%;
-                right: 5px;
-                background-color: black;
-                color: white;
-                padding-left: 20px;
-                padding-right: 20px;
-                background-color: black;
-                -webkit-animation-name: example; 
-                -webkit-animation-duration: 4s;
-                animation-name: example;
-                animation-duration: 4s;
-                text-color: white;
-            }
-
             
-            @-webkit-keyframes example {
-                0%   {background-color: red;}
-                25%  {background-color: yellow;}
-                50%  {background-color: blue;}
-                100% {background-color: green;}
-            }
-
-           
-            @keyframes example {
-                0%   {background-color: red;}
-                25%  {background-color: yellow;}
-                50%  {background-color: blue;}
-                100% {background-color: green;}
-            }
-
-            .shadow{
-                text-shadow: 10px 10px 20px black, 0 0 25px blue, 0 0 5px darkblue;
-            }
         </style>
         
     </head>
