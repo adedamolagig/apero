@@ -106,6 +106,7 @@
                 -webkit-animation-duration: 4s;
                 animation-name: example;
                 animation-duration: 4s;
+                animation-iteration-count: infinite;
                 text-color: white;
             }
 
