@@ -1670,6 +1670,11 @@ mark,
 
 .text-center {
   text-align: center;
+  text-transform: uppercase;
+}
+
+.text-bold {
+  font-size: 30px;
 }
 
 .text-justify {
