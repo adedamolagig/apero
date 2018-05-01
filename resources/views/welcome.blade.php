@@ -112,16 +112,16 @@
 
             
             @-webkit-keyframes example {
-                0%   {background-color: red;}
-                25%  {background-color: yellow;}
+                0%   {background-color: indianred;}
+                25%  {background-color: olive;}
                 50%  {background-color: blue;}
                 100% {background-color: green;}
             }
 
            
             @keyframes example {
-                0%   {background-color: red;}
-                25%  {background-color: yellow;}
+                0%   {background-color: indianred;}
+                25%  {background-color: olive;}
                 50%  {background-color: blue;}
                 100% {background-color: green;}
             }
