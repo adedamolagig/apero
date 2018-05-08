@@ -137,7 +137,7 @@
         
         <div class="flex-center position-ref full-height">
             <div class="top-left links shadow">
-                <a href="/threads">All Threads </a>    
+                <a href="/threads">Thoughts...</a>    
             </div>
             @if (Route::has('login'))
                 <div class="top-right links">
