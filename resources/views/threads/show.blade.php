@@ -19,7 +19,7 @@
 
                                 {{ method_field('DELETE') }}
 
-                                <button type="submit" class="btn btn-danger ">Delete Thoughts </button>
+                                <button type="submit" class="btn btn-danger ">Delete Circles </button>
                             </form>
                             @endcan
 
@@ -66,7 +66,9 @@
                         <a href="#"> {{$thread->owner->name}}</a>, and currently has {{ $thread->replies_count }} {{str_plural('reply', $thread->replies_count) }}
                     </div>
 
-                    <subscribe-button></subscribe-button>
+                    <subscribe-button :active="{{json_encode($thread->isSubscribedTo)}}"></subscribe-button>
+
+                    <!-- code same as above < {{ $thread->isSubscribedTo ? 'true' : 'false'  }} >-->
                 </div>
             </div>
         </div>

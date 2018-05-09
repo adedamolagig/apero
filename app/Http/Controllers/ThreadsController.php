@@ -83,6 +83,7 @@ class ThreadsController extends Controller
         //$threads = Thread::latest()->get();
 
         
+        
         return view('threads.show', [
 
             'thread' => $thread,
