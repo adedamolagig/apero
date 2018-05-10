@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\notifications\ThreadWasUpdated;
 
 class Thread extends Model
 {
@@ -62,10 +63,24 @@ class Thread extends Model
     {
         return $this->belongsTo('App\Channels');
     }
-
+    /**
+     * Add a reply to the thread.
+     *
+     * @param array $reply
+     * @return Model
+     */
     public function addReply($reply)
     {
-    	$this->replies()->create($reply);
+    	$reply = $this->replies()->create($reply);
+        // Prepare notifications for all subscribers.
+
+        foreach ($this->subscriptions as $subscription) {
+            if ($subscription->user_id != $reply->user_id) {
+                $subscription->user->notify(new ThreadWasUpdated($this, $reply));
+            }  
+        }
+
+        return $reply;
     }
 
     public function scopeFilter($query, $filters)
@@ -73,11 +88,19 @@ class Thread extends Model
         return $filters->apply($query); 
     }
 
+    /**
+     * Subscribe a user to the current thread.
+     *
+     * @param int|null $userId
+     * @return $this
+     */
     public function subscribe($userId = null)
     {
         $this->subscriptions()->create([
             'user_id' => $userId ?: auth()->id()
         ]);
+
+        return $this;
     }
 
     public function subscriptions()
@@ -93,6 +116,13 @@ class Thread extends Model
     }
 
     public function getIsSubscribedToAttribute()
+    {
+        return $this->subscriptions()
+                ->where('user_id', auth()->id())
+                ->exists();
+    }
+
+    public function isSubscribedTo()
     {
         return $this->subscriptions()
                 ->where('user_id', auth()->id())
