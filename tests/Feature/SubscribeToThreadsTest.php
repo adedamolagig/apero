@@ -13,13 +13,13 @@ class SubscribeToThreadsTest extends TestCase
 	/** @test */
 	public function a_user_can_subscribe_to_threads()
 	{
-
+		//Given a user is signed in 
 		$this->signIn();
 
 		// Given we have a thread
 		$thread = create('App\Thread');
 
-		// And the user subscribes to the thread
+		// And the user subscribes to the thread or hits the end point for subscriptions
 		$this->post($thread->path() . '/subscriptions');
 
 		$this->assertCount(1, $thread->fresh()->subscriptions);

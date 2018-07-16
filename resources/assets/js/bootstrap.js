@@ -22,6 +22,9 @@ try {
 window.Vue = require('vue');
 window.axios = require('axios');
 
+// window.user = require('user');
+
+
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
@@ -55,6 +58,8 @@ if (token) {
 
 
 window.events = new Vue();
+
+// window.events = new user = re();
 
 window.flash = function (message){
 	window.events.$emit('flash', message);

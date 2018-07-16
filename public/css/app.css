@@ -8350,3 +8350,8 @@ button.close {
   }
 }
 
+body {
+  background-image: url("/images/scrabble.jpeg");
+  background-color: #494a4b;
+}
+
