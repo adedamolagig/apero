@@ -57,7 +57,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 11);
@@ -615,7 +615,7 @@ module.exports = defaults;
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global, setImmediate) {/*!
- * Vue.js v2.5.16
+ * Vue.js v2.5.17
  * (c) 2014-2018 Evan You
  * Released under the MIT License.
  */
@@ -5704,7 +5704,7 @@ Object.defineProperty(Vue, 'FunctionalRenderContext', {
   value: FunctionalRenderContext
 });
 
-Vue.version = '2.5.16';
+Vue.version = '2.5.17';
 
 /*  */
 
@@ -12045,18 +12045,15 @@ module.exports = __webpack_require__(58);
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-
 __webpack_require__(13);
 
-window.Vue = __webpack_require__(4);
+window.Vue = __webpack_require__(4); // window.User = require('user');
 
-// window.User = require('user');
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -12067,7 +12064,6 @@ Vue.component('example', __webpack_require__(39));
 Vue.component('thread-view', __webpack_require__(42));
 Vue.component('flash', __webpack_require__(47));
 Vue.component('user-notifications', __webpack_require__(55));
-
 var app = new Vue({
   el: '#app',
   components: {}
@@ -12077,9 +12073,7 @@ var app = new Vue({
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
-
 window._ = __webpack_require__(14);
-
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
  * for JavaScript based Bootstrap features such as modals and tabs. This
@@ -12091,21 +12085,17 @@ try {
 
   __webpack_require__(17);
 } catch (e) {}
-
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
+
 window.Vue = __webpack_require__(4);
-window.axios = __webpack_require__(20);
-
-// window.user = require('user');
-
+window.axios = __webpack_require__(20); // window.user = require('user');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
  * all outgoing HTTP requests automatically have it attached. This is just
@@ -12119,26 +12109,20 @@ if (token) {
 } else {
   console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
-
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
  * allows your team to easily build robust real-time web applications.
  */
-
 // import Echo from 'laravel-echo'
-
 // window.Pusher = require('pusher-js');
-
 // window.Echo = new Echo({
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
 
 
-window.events = new Vue();
-
-// window.events = new user = re();
+window.events = new Vue(); // window.events = new user = re();
 
 window.flash = function (message) {
   window.events.$emit('flash', message);
@@ -12162,7 +12146,7 @@ window.flash = function (message) {
   var undefined;
 
   /** Used as the semantic version number. */
-  var VERSION = '4.17.10';
+  var VERSION = '4.17.11';
 
   /** Used as the size to enable large array optimizations. */
   var LARGE_ARRAY_SIZE = 200;
@@ -12426,7 +12410,7 @@ window.flash = function (message) {
   var reHasUnicode = RegExp('[' + rsZWJ + rsAstralRange  + rsComboRange + rsVarRange + ']');
 
   /** Used to detect strings that need a more robust regexp to match words. */
-  var reHasUnicodeWord = /[a-z][A-Z]|[A-Z]{2,}[a-z]|[0-9][a-zA-Z]|[a-zA-Z][0-9]|[^a-zA-Z0-9 ]/;
+  var reHasUnicodeWord = /[a-z][A-Z]|[A-Z]{2}[a-z]|[0-9][a-zA-Z]|[a-zA-Z][0-9]|[^a-zA-Z0-9 ]/;
 
   /** Used to assign default `context` object properties. */
   var contextProps = [
@@ -13372,20 +13356,6 @@ window.flash = function (message) {
       }
     }
     return result;
-  }
-
-  /**
-   * Gets the value at `key`, unless `key` is "__proto__".
-   *
-   * @private
-   * @param {Object} object The object to query.
-   * @param {string} key The key of the property to get.
-   * @returns {*} Returns the property value.
-   */
-  function safeGet(object, key) {
-    return key == '__proto__'
-      ? undefined
-      : object[key];
   }
 
   /**
@@ -15845,7 +15815,7 @@ window.flash = function (message) {
           if (isArguments(objValue)) {
             newValue = toPlainObject(objValue);
           }
-          else if (!isObject(objValue) || (srcIndex && isFunction(objValue))) {
+          else if (!isObject(objValue) || isFunction(objValue)) {
             newValue = initCloneObject(srcValue);
           }
         }
@@ -18766,6 +18736,22 @@ window.flash = function (message) {
         array[length] = isIndex(index, arrLength) ? oldArray[index] : undefined;
       }
       return array;
+    }
+
+    /**
+     * Gets the value at `key`, unless `key` is "__proto__".
+     *
+     * @private
+     * @param {Object} object The object to query.
+     * @param {string} key The key of the property to get.
+     * @returns {*} Returns the property value.
+     */
+    function safeGet(object, key) {
+      if (key == '__proto__') {
+        return;
+      }
+
+      return object[key];
     }
 
     /**
@@ -43245,11 +43231,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
 /* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('Component mounted.');
-    }
+  mounted: function mounted() {
+    console.log('Component mounted.');
+  }
 });
 
 /***/ }),
@@ -43351,12 +43336,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_SubscribeButton_vue__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_SubscribeButton_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_SubscribeButton_vue__);
 
-
-
-
 /* harmony default export */ __webpack_exports__["default"] = ({
-	components: { SubscribeButton: __WEBPACK_IMPORTED_MODULE_0__components_SubscribeButton_vue___default.a }
-
+  components: {
+    SubscribeButton: __WEBPACK_IMPORTED_MODULE_0__components_SubscribeButton_vue___default.a
+  }
 });
 
 /***/ }),
@@ -43416,35 +43399,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
 /* harmony default export */ __webpack_exports__["default"] = ({
-
-	props: ['active'],
-
-	// data(){
-	// 	return {
-	// 		active: false
-	// 	}
-	// }, replaced with prop
-
-	computed: {
-		classes: function classes() {
-			return ['btn', this.active ? 'btn-primary' : 'btn-default'];
-		}
-	},
-
-	methods: {
-		subscribe: function subscribe() {
-
-			var requestType = this.active ? 'delete' : 'post';
-
-			axios[requestType](location.pathname + '/subscriptions');
-
-			this.active = !this.active;
-
-			flash('subscribed');
-		}
-	}
+  props: ['active'],
+  // data(){
+  // 	return {
+  // 		active: false
+  // 	}
+  // }, replaced with prop
+  computed: {
+    classes: function classes() {
+      return ['btn', this.active ? 'btn-primary' : 'btn-default'];
+    }
+  },
+  methods: {
+    subscribe: function subscribe() {
+      var requestType = this.active ? 'delete' : 'post';
+      axios[requestType](location.pathname + '/subscriptions');
+      this.active = !this.active;
+      flash('subscribed');
+    }
+  }
 });
 
 /***/ }),
@@ -43915,44 +43889,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
 /* harmony default export */ __webpack_exports__["default"] = ({
-	props: ['message'],
+  props: ['message'],
+  data: function data() {
+    return {
+      body: '',
+      show: false
+    };
+  },
+  created: function created() {
+    var _this = this;
 
-	data: function data() {
-		return {
-			body: '',
-			show: false
-		};
-	},
-	created: function created() {
-		var _this = this;
+    if (this.message) {
+      this.flash(this.message);
+    }
 
-		if (this.message) {
-			this.flash(this.message);
-		}
+    window.events.$on('flash', function (message) {
+      _this.flash(message);
+    });
+  },
+  methods: {
+    flash: function flash(message) {
+      this.body = message;
+      this.show = true;
+      this.hide();
+    },
+    hide: function hide() {
+      var _this2 = this;
 
-		window.events.$on('flash', function (message) {
-			_this.flash(message);
-		});
-	},
-
-
-	methods: {
-		flash: function flash(message) {
-			this.body = message;
-			this.show = true;
-
-			this.hide();
-		},
-		hide: function hide() {
-			var _this2 = this;
-
-			setTimeout(function () {
-				_this2.show = false;
-			}, 3000);
-		}
-	}
+      setTimeout(function () {
+        _this2.show = false;
+      }, 3000);
+    }
+  }
 });
 
 /***/ }),
@@ -44053,18 +44022,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
 /* harmony default export */ __webpack_exports__["default"] = ({
-	data: function data() {
-		return { notifications: ['asdf'] };
-	},
-	created: function created() {
-		var _this = this;
+  data: function data() {
+    return {
+      notifications: ['asdf']
+    };
+  },
+  created: function created() {
+    var _this = this;
 
-		axios.get('/profiles/' + window.App.user.name + '/notifications/').then(function (response) {
-			return _this.notifications = response.data;
-		});
-	}
+    axios.get("/profiles/".concat(window.App.user.name, "/notifications/")).then(function (response) {
+      return _this.notifications = response.data;
+    });
+  }
 });
 
 /***/ }),
