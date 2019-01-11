@@ -19,7 +19,7 @@
 
                                 {{ method_field('DELETE') }}
 
-                                <button type="submit" class="btn btn-danger " onclick="return ('Are you sure???')">Delete Circles </button>
+                                <button type="submit" class="btn btn-danger " onclick="return confirm('Are you sure???')">Delete Circles </button>
                             </form>
                             @endcan
 
