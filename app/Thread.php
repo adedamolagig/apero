@@ -102,7 +102,10 @@ class Thread extends Model
      */
     public function subscribe($userId = null)
     {
+
         $this->subscriptions()->create([
+
+            // use the userId provided otherwise fallback to checking the authenticated user
             'user_id' => $userId ?: auth()->id()
         ]);
 
