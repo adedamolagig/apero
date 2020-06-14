@@ -91,10 +91,19 @@ class CreateThreadsTest extends TestCase
     public function unauthorized_users_may_not_delete_threads()
     {
         $this->withExceptionHandling();
+        //Given we have a thread 
         $thread = create('App\Thread');
 
-        $this->delete($thread->path())->assertRedirect('/login');
+        //When we submit a test to delete a thread
+        $this->delete($thread->path())
+
+        //Its not going to work, it just redirects
+                ->assertRedirect('/login');
+
+        //However, if we are signed in and 
         $this->signIn();
+
+        //perform a delete function, it should still redirect
         $this->delete($thread->path())->assertRedirect('/login');
     }
 
@@ -103,13 +112,19 @@ class CreateThreadsTest extends TestCase
     /** @test */
     public function authorized_users_can_delete_a_thread()
     {
+        //Given that we have a signed in user
         $this->signIn();
 
+        //Create a thread that is owned by the user(['user_id' => auth()->id])
         $thread = create('App\Thread', ['user_id' => auth()->id()]);
+
+        //Create a reply that is owned by the user(['user_id' => auth()->id])
         $reply = create('App\Reply', ['thread_id' => $thread->id]);
 
+        //When they try to delete the thread
         $response = $this->json('DELETE', $thread->path());
 
+        //Assert 204 response 
         $response->assertStatus(204);
 
         $this->assertDatabaseMissing('threads', ['id' => $thread->id] );

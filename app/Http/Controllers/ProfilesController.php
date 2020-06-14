@@ -48,6 +48,8 @@ class ProfilesController extends Controller
     {
         return view('profiles.show', [
             'profileUser' => $user,
+
+            //Give me the user threads and paginate them into 30 per page
             'threads' => $user->threads()->paginate(30),
         ]);
     }
