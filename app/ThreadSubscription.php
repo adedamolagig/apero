@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ThreadSubscription extends Model
 {
+  //ThreadSubscription model
     protected $guarded = [];
 
   	public function user()

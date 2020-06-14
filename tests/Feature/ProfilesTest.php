@@ -22,8 +22,10 @@ class ProfilesTest extends TestCase
 
 	function profiles_display_all_threads_created_by_the_associated_user()
 	{
+		//Given we have a user
 		$user = create('App\User');
 		
+		//And threads created by the user
 		$thread = create('App\Thread', ['user_id' => $user->id]);
 
 		$this->get("/profiles/{$user->name}")	

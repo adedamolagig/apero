@@ -11,9 +11,7 @@
                             <h4 class="flex">
                                 <a href="{{ $thread->path() }}">
                                     {{ $thread->title }}
-                                </a>
-
-                                 
+                                </a>    
                             </h4>
                             
 

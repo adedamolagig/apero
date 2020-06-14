@@ -25,6 +25,7 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
+        //Setting Adedamola to be an admin and to whatever he desires on the forum
         Gate::before(function ($user){
             if ($user->name === 'Adedamola Ogundeinde')
                 return true;

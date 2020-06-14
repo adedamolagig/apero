@@ -126,6 +126,7 @@ class Thread extends Model
 
     public function getIsSubscribedToAttribute()
     {
+        //find all subscriptions to the thread(yours and everyother) and delete subscriptions with your own userId
         return $this->subscriptions()
                 ->where('user_id', auth()->id())
                 ->exists();
