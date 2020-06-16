@@ -7,6 +7,8 @@ use App\notifications\ThreadWasUpdated;
 
 class Thread extends Model
 {
+    use RecordsActivity;
+    
     protected $guarded = [];
 
     protected $with = ['owner', 'channels'];
@@ -27,7 +29,11 @@ class Thread extends Model
         // static::addGlobalScope('owner', function($builder){
         //     $builder->with('owner');
         // });
+
+        
     }
+
+    
 
     public function path()
     {
