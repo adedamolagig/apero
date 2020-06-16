@@ -47,12 +47,12 @@ class ProfilesController extends Controller
     public function show(User $user)
     {
 
-        return $user->activity();
+        
         return view('profiles.show', [
             'profileUser' => $user,
 
             //Give me the user threads and paginate them into 30 per page
-            'threads' => $user->thread()->paginate(30),
+            'threads' => $user->threads()->paginate(30),
         ]);
     }
 
