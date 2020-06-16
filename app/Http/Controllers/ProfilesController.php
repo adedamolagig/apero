@@ -52,7 +52,7 @@ class ProfilesController extends Controller
             'profileUser' => $user,
 
             //Give me the user threads and paginate them into 30 per page
-            'threads' => $user->activity()->paginate(30),
+            'threads' => $user->thread()->paginate(30),
         ]);
     }
 

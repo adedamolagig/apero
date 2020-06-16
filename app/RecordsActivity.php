@@ -32,7 +32,7 @@ trait RecordsActivity
     	return $this->morphMany('App\Activity', 'subject');
     }
 
-    protected function getActivityType($event)
+    protected function getActivityType($event): string
     {
        $type = strtolower((new \ReflectionClass($this))->getShortName());
 

@@ -33,4 +33,18 @@ class ActivityTest extends TestCase
 		$this->assertEquals($activity->subject->id, $thread->id);
 
 	}
+
+	/** @test */
+	function it_records_activity_when_a_reply_is_created()
+	{
+		//Sign a user in 
+		$this->signIn();
+
+		//if we create a reply and persist it
+		$reply = create('App\Reply');
+
+		//we expect to have two records in the database
+		$this->assertEquals(2, Activity::count());
+		
+	}
 }
