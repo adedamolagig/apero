@@ -24,7 +24,11 @@ class Thread extends Model
         });
 
         static::deleting(function ($thread){
-            $thread->replies()->delete();
+            $thread->replies->each->delete();
+            //Code below is replaced with code above
+            // $thread->replies->each(function ($reply){
+            // //     $reply->delete();
+            // });
         }); 
         // static::addGlobalScope('owner', function($builder){
         //     $builder->with('owner');
