@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Thread;
+use App\Reply;
 use Illuminate\Http\Request;
 
 class RepliesController extends Controller
@@ -23,5 +24,15 @@ class RepliesController extends Controller
     	]);
 
     	return back()->with('flash', 'Your reply has been recorded');
+    }
+
+    public function destroy(Reply $reply)
+    {
+        if($reply->user_id != auth()->id()){
+            return response([], 403);
+        }
+        $reply->delete();
+
+        return back();
     }
 }

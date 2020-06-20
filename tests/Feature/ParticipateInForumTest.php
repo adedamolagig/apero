@@ -43,4 +43,32 @@ class ParticipateInForumTest extends TestCase
             ->assertSessionHasErrors('body'); 
 
     }
+
+    /** @test */
+    function unauthorized_users_cannot_delete_replies()
+    {
+        $this->withExceptionHandling();
+
+        $reply = create('App\Reply');
+
+        //What happens when an unsigned user tries to delete a reply
+        $this->delete("/replies/{$reply->id}")
+            ->assertRedirect('login');
+
+        //this happens when a signed in user tries to delete a reply
+        $this->signIn()
+            ->delete("/replies/{$reply->id}")
+            ->assertStatus(403);
+    }
+
+    /** @test */
+    function authorized_users_can_delete_replies()
+    {
+        $this->signIn();
+
+        $reply = create('App\Reply', ['user_id' => auth()->id()]);
+
+        $this->delete("/replies/{$reply->id}")->assertStatus(302);
+        $this->assertDatabaseMissing('replies', ['id' => $reply->id]);
+    }
 }
